@@ -1,0 +1,176 @@
+.form_paciente {
+    padding: 20px 10px;
+    padding-bottom: 400px;
+}
+.form_paciente form {
+    display: flex;
+    flex-direction: column;
+}
+.form_paciente form>div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.form_paciente section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 550px;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e8e8e8;
+    background-color: white;
+}
+.form_paciente section aside {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.form_paciente form h3 {
+    text-align: center;
+    color: var(--color2);
+}
+.form_paciente section .mayor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form_paciente .form-group {
+    display: flex;
+    gap: 15px;
+}
+.form_paciente form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    text-wrap: nowrap;
+    user-select: none;
+    color: rgb(107, 106, 106);
+}
+.form_paciente form .sexo div {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+.form_paciente form .sexo label {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 500 !important;
+    cursor: pointer;
+    color: black;
+    font-weight: normal;
+}
+
+.form_paciente form input, select {
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #d1d1d1; 
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: .3s linear;
+    border-radius: 4px;
+    outline: transparent;
+}
+
+
+.form_paciente form input:focus, select:focus {
+    border: 2px solid dodgerblue;
+    outline: 3px solid rgba(30, 143, 255, 0.145);
+}
+.form_paciente form input.con-texto {
+    border: 2px solid rgba(30, 143, 255, 0.609);
+    outline: none;
+    /* outline: 3px solid rgba(30, 143, 255, 0.145); */
+}
+.form_paciente .historia_clin {
+    position: relative;
+}
+.form_paciente .historia_clin div {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    /* border: 2px solid var(--color2); */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: rgb(246, 248, 249);
+    display: none;
+}
+.form_paciente .historia_clin p {
+    color: var(--color2);
+    font-weight: 600;
+}
+.form_paciente .historia_clin ul {
+   display: flex;
+   flex-direction: column;
+   gap: 5px; 
+}
+.form_paciente .historia_clin li {
+    border-radius: 3px;
+    color: black;
+    font-weight: 600;
+    padding: 3px 10px;
+    list-style: none;
+    background-color: var(--line0);
+    transition: .3s linear;
+    cursor: pointer;
+}
+.form_paciente .historia_clin li:hover {
+    background-color: var(--line2);
+}
+.form_paciente .historia_clin input:focus ~ div,
+.form_paciente .historia_clin div:hover {
+    display: block;
+}
+
+.form_paciente label span {
+    color: rgb(244, 109, 109);
+    font-weight: 400;
+    font-size: 12px;
+}
+.form_paciente .discapacidad {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    text-wrap: nowrap;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    height: 55px;
+}
+.form_paciente .discapacidad input {
+    width: auto;
+}
+
+.form_paciente .msgg {
+    text-align: center;
+    font-weight: 600;
+    color: rgba(243, 67, 67, 0.799);
+    margin-top: 5px;
+    font-size: 14px;
+}
+.form_paciente .btns {
+    gap: 70px;
+}
+
+.form_paciente .btns button {
+    margin-top: 20px;
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+.form_paciente .btns button svg {
+    font-size: 20px;
+}

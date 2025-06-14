@@ -1,0 +1,289 @@
+.reg-personal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    padding-bottom: 200px;
+    width: 100%;
+    
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.reg-personal form {
+    animation: scaleIn 0.3s forwards;
+    position: relative;
+    padding: 20px 0;
+    padding-bottom: 100px;
+    /* background-color: rgb(244, 248, 255); */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'poppins';
+    max-width: 650px;
+    /* border: red solid 1px; */
+    animation: slideIn 0.3s forwards ;
+
+}
+
+.reg-personal form h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.reg-personal .close-personal-form {
+    position: absolute;
+    top: 20px;
+    width: 33px;
+    padding: 5px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 1px;
+    border-radius: 50%;
+}
+
+.reg-personal .close-personal-form:hover {
+    transform: scale(1.05) rotate(180deg);
+}
+
+.reg-personal form .fc {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reg-personal form .fd,
+.reg-personal form .fi {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    gap: 10px;
+}
+
+.reg-personal form .fc .fd,
+.reg-personal form .fc .fi {
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-personal form .fc .fd div,
+.reg-personal form .fc .fi div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.reg-personal form div label {
+    width: 100%;
+    display: flex;
+    font-size: 15px;
+    flex-direction: column;
+    color: #3E3D55FF;
+    font-weight: 500;
+}
+
+
+.reg-personal form .combos {
+    width: 102%;
+}
+
+.reg-personal form input,
+.reg-personal form select {
+    font-family: 'poppins';
+    /* border-radius: 3px; */
+    font-size: 1rem;
+    padding: 5px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: rgb(218, 227, 223) solid ;
+    outline: none;
+}
+
+.reg-personal form .activo {
+    border: rgb(117, 198, 191) solid;
+}
+.reg-personal form input:focus,
+.reg-personal form select:focus {
+    border: rgb(117, 198, 191) solid;
+}
+
+.reg-personal form input {
+    width: initial;
+    width: 100%;
+    font-weight: bold;
+    color: #413f3f;
+}
+.reg-personal .file input {
+    font-weight: normal;
+    text-transform: none;
+    font-size: 12px;
+}
+.reg-personal .especialidad {
+    height: 60px;
+    margin-top: 10px;
+}
+
+.reg-personal .label-especialidad {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.reg-personal .label-especialidad input {
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    height: 15px;
+    cursor: pointer;
+    width: 15px;
+}
+.reg-personal #email {
+    text-transform: none;
+}
+
+.reg-personal form .btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.reg-personal form .btns button {
+    padding: 9px 0;
+    margin: auto;
+    margin-top: 10px;
+    font-family: 'poppins';
+    font-weight: 550;
+    border-radius:3px;
+    color: white;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 160px;
+}
+.reg-personal form .btns svg {
+    font-size: 20px;
+}
+.reg-personal form .btn-cancel {
+    background-color: var(--line2);
+    color: #333 !important;
+}
+
+.reg-personal form .ico {
+    font-size: 22px;
+}
+
+.reg-personal form .flotar {
+    animation: flotar .5s;
+    transition: 4s ease;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+.reg-personal .box-msg {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.reg-personal .msg-personal {
+    color: rgb(246, 58, 89);
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+
+.reg-personal .fc fieldset {
+    display: flex;
+    flex-direction: row !important;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    /* border-radius: 10px; */
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.reg-personal .credencialesAcceso legend {
+    font-size: 14px;
+    padding: 0 5px;
+    color: #000;
+}
+@media (max-width: 1200px) {
+    .reg-personal form .fc {
+        display: flex;
+        flex-direction: column;
+    }
+}
+#savee {
+    position: relative;
+    padding-left: 40px;
+    padding-right: 15px;
+    width: 140px;
+}
+#savee .loader {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 10px;  
+    border-radius: 50%;
+    border: 3px solid rgba(212, 217, 214, 0.37);
+    border-top: 3px solid rgba(255, 255, 255, 0.771);
+    animation: spin 1s linear infinite;
+}
+
+/* ESTYLO PARA SELECCION DE SELECTOR DE SERVICIOS Y PROIFESION  */
+
+.selected-per {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    gap: 1rem; /* Espacio entre los elementos */
+}
+
+.selected-per label {
+    position: relative;
+}
+
+.selected-per .ico-mas {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: rgb(24, 164, 85);
+    font-size: 20px;
+}
+.selected-per select {
+    text-transform: uppercase;
+}
+.selected-per option {
+    text-transform: uppercase;
+}
+

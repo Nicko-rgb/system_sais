@@ -1,0 +1,48 @@
+.ficha-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.ficha-map h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.ficha-map .fichas {
+    width: 100%;
+    /* border: red solid 1px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
+.ficha-map .ficha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: var(--color4) solid 1px;
+}
+.ficha-map .ficha p {
+    font-size: .8rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+    border-left: rgba(128, 128, 128, 0.71) solid 2px;
+    padding: 0 10px;
+}
+.ficha-map .ficha svg {
+    color: var(--color1);
+    /* border: red solid 1px; */
+    height: 23px;
+    width: 23px;
+    cursor: pointer;
+    transition: .3s linear;
+    padding: 2px;
+    margin-left: 10px;
+}
+.ficha-map .ficha svg:hover {
+    padding: 0;
+    background-color: var(--color4);
+}

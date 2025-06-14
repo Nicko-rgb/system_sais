@@ -1,0 +1,293 @@
+.form-cita {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+    background-color: rgba(0, 0, 0, 0.611);
+    padding: 30px 10px;
+    padding-bottom: 100px;
+    overflow-y: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.form-cita form {
+    width: 640px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 25px;
+    padding-right: 35px;
+    gap: 15px;
+    box-shadow: 0 0 7px  var(--color3);
+    animation: fadeIn .5s ease;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+.form-cita .ico-close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s ease;
+    padding: 5px;
+
+}
+.form-cita .ico-close:hover{
+    color: red;
+}
+
+.form-cita form h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'poppins';
+    color: var(--color1);
+    margin: 0;
+    border: none;
+}
+.form-cita form h2 span {
+    font-weight: 500;
+    font-weight: 700;
+    color: var(--color1);
+    text-transform: uppercase;
+}
+.form-cita form .fechas {
+    display: flex;
+    justify-content: space-between;
+}
+.form-cita form .box-fechas{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 3px;
+    background-color: rgba(30, 143, 255, 0.07);
+    box-shadow: 0 0 5px var(--line0);
+    padding: 5px 0;
+    width: 40%;
+}
+.form-cita form .box-fechas p {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+}
+.form-cita form .box-fechas span {
+    text-align: center;
+    font-weight: 550;
+    font-size: 15px;
+}
+
+.form-cita form .disable {
+    background-color: rgb(222, 222, 222);
+    cursor: no-drop;
+}
+.form-cita .box-filtra {
+    position: relative;
+    padding: 12px 10px;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    background-color: rgba(30, 143, 255, 0.07);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.form-cita .box-filtra input, .form-cita .box-filtra select {
+    font-weight: bold;
+    text-align: center;
+    box-shadow: none;
+    text-transform: capitalize;
+}
+.form-cita .box-filtra .tx {
+    position: absolute;
+    font-size: 13px;
+    top: -12px;
+    color: black;
+    font-weight: 500;
+    background-color: rgba(30, 143, 255, 0.07);
+    backdrop-filter: blur(10px);
+    padding: 0 8px;
+}
+.form-cita .box-filtra .msg {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: dodgerblue;
+}
+.form-cita .box-filtra .msgError {
+    color: red;
+}
+.form-cita form div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.form-cita form label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-cita form input, .form-cita form select {
+    padding: 7px;
+    font-size: 15px;
+    outline: none;
+    font-family: 'poppins';
+    border-radius: 2px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+.form-cita form input, .form-cita textarea, .form-cita select {
+    border-radius: 5px;
+    border: solid 2px rgba(86, 168, 153, 0.478);
+    background-color: white;
+}
+.form-cita form textarea{
+    font-size: 15px;
+}
+
+.form-cita form input:focus, .form-cita textarea:focus {
+    border: solid 2px rgba(14, 171, 145, 0.812);
+    box-shadow: none;
+    background-color: white;
+}
+
+.form-cita form .noo {
+    cursor: no-drop;
+}
+.form-cita form textarea {
+    padding: 5px;
+    min-height: 80px;
+    outline: none;
+    background-color: white;
+    min-width: 100%;
+    max-width: 100%;
+}
+.form-cita form .siEdit {
+    border: solid 2px rgba(30, 143, 255, 0.462);
+}
+.form-cita form .no-edit{
+    font-weight: bold;
+    cursor: no-drop;
+    text-align: center;
+    color: rgb(101, 101, 101);
+}
+.form-cita form .btnss {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+}
+
+.form-cita .btnss button {
+    padding: 12px 24px;
+    width: 190px;
+    border-radius: 6px;
+    color: white;
+    font-family: 'poppins';
+    font-weight: bold;
+}
+.form-cita .btnss .btn-cancel {
+    color: #333;
+}
+
+.form-cita .btnss .ico {
+    cursor: pointer;
+}
+
+/* Modal de carga */
+.modal-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 9999; /* Asegúrate de que el z-index sea alto */
+}
+
+.modal-loading .loader {
+    border: 4px solid #f3f3f3; /* Color del borde */
+    border-top: 4px solid #3498db; /* Color del borde giratorio */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Animación de giro */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* Modal de resultado */
+.modal-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el modal */
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px; /* Puedes ajustar el ancho según sea necesario */
+}
+
+.modal-content button {
+    /* padding: 10px 20px; */
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2em;
+    margin-top: 10px; /*Espaciado encima del botón*/
+}
+
+.modal-content button:hover {
+    background-color: #297ab9;
+}
+.form-cita input {
+    text-transform: capitalize;
+    font-weight: 600;
+}

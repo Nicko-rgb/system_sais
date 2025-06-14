@@ -1,0 +1,98 @@
+.panel-cita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.panel-cita .contenedor-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 20px;
+    max-width: 800px;
+}
+.panel-cita .opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: rgb(233, 233, 233) solid;
+    padding: 10px;
+    width: 160px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.panel-cita .opcion:hover {
+    background-color: rgb(233, 233, 233);
+}
+.panel-cita .opcion p {
+    font-size: .9rem;
+    font-weight: 550;
+    text-transform: uppercase;
+}
+
+.panel-cita .opcion img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0);
+}
+
+.panel-cita .cercaTxt {
+    margin-top: 30px;
+}
+.panel-cita .search {
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.panel-cita .search input {
+    width: 100%;
+    padding: 4px 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 35px;
+    border: var(--color3) solid 2px;
+}
+.panel-cita .search svg {
+    position: absolute;
+}
+.panel-cita .search .ico1 {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.panel-cita .search div {
+    border: red solid 1px;
+    position: absolute;
+    right: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.panel-cita .search .etiqueta {
+    position: absolute;
+    text-wrap: nowrap;
+    background-color: #4f4f4f;
+    color: white;
+    font-weight: 500;
+    font-size: .8rem;
+    top: -40px;
+    padding: 3px;
+    opacity: 0;
+    transform: scale(.8);
+    transition: .3s ease;
+}
+.panel-cita .search .ico2 {
+    font-size: 20px;
+}
+.panel-cita .search .ico2:hover ~ .etiqueta {
+    opacity: 1;
+    transform: scale(1);
+}
+.panel-cita .tbl-container {
+    margin-top: 5px;
+}

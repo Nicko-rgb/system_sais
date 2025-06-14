@@ -1,0 +1,119 @@
+.edit-color-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 201;
+}
+
+.edit-color-modal main {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 50px auto;
+    animation: slideInY 0.3s ease-out;
+}
+
+.edit-color-modal h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.edit-color-modal .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.edit-color-modal .color-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #EBEEF1DF;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.edit-color-modal .color-item:hover {
+    /* transform: translateY(-2px); */
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.43); */
+    background-color: #DCDFE2DF;
+}
+
+.edit-color-modal .color-label {
+    flex: 1;
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 14px;
+}
+
+.edit-color-modal .color-preview {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    margin-right: 1rem;
+    border: 2px solid #ddd;
+}
+
+.edit-color-modal .color-input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    width: 50px;
+    cursor: pointer;
+}
+
+.edit-color-modal svg {
+    position: absolute;
+    right: 1.5rem;
+    background-color: white;
+    pointer-events: none;
+}
+.edit-color-modal .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.edit-color-modal .save-button, .reset-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.edit-color-modal .reset-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.edit-color-modal .reset-button:hover {
+    background-color: #45a049;
+}
+
+.edit-color-modal .btn-cancel {
+    font-weight: 500;
+    background-color: rgba(128, 128, 128, 0.691);
+    border-radius: 3px;
+}
+.edit-color-modal .btn-cancel:hover {
+    background-color: rgba(128, 128, 128, 0.938);
+}
+.edit-color-modal .buttons-container button {
+    padding: 0;
+    height: 35px;
+    width: 100px;
+}

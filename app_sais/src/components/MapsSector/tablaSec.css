@@ -1,0 +1,15 @@
+.tbl-sector-map .h3 {
+    text-align: center;
+}
+.tbl-sector-map .search{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.tbl-sector-map .search input{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #ccc;
+    outline: none;          
+}

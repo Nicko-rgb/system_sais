@@ -1,0 +1,131 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 45px;
+    box-shadow: 0 0 3px #33333379;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 200;
+}
+.header>div {
+    display: flex;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* width: 100%; */
+    /* border: red solid 1px; */
+}
+.header .header_left {
+    cursor: pointer;
+}
+.header .header_left svg {
+    font-size: 30px;
+    /* border: red solid 1px; */
+    padding: 5px;
+    color: var(--color0);
+}
+.header .header_left p {
+    font-weight: 700;
+    font-size: .9rem;
+    margin-left: -7px;
+    color: var(--color0);
+}
+.header .header_center {
+    justify-content: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+}
+.header .header_right {
+    justify-content: flex-end; 
+    gap: 5px !important;
+}
+.header .header_right .name {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.header .header_right .ico-h {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .2s linear;
+    position: relative ;
+}
+.header .header_right svg {
+    font-size: 28px;
+    padding: 5px;
+}
+.header .header_right div:nth-child(2) {
+    color: dodgerblue;
+    border: solid 2px rgba(30, 143, 255, 0.3);
+}
+.header .header_right div:nth-child(3) {
+    color: gray;
+    border: solid 2px rgba(128, 128, 128, 0.3);
+}
+.header .header_right div:nth-child(4) {
+    color: dodgerblue;
+    border: solid 2px rgba(30, 143, 255, 0.3);
+}
+.header .header_right div:nth-child(5) {
+    color: rgb(247, 86, 86);
+    border: solid 2px rgba(255, 30, 30, 0.3);
+}
+.header .ico-h:hover  .etique {
+    visibility: visible;
+}
+.header .ico-h .etique {
+    position: absolute;
+    bottom: -48px;
+    visibility: hidden;
+    background-color: #333;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-wrap: nowrap;
+    display: grid;
+    place-items: center;
+}
+.header .ico-h .etique::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;   /* borde izquierdo transparente */
+    border-right: 15px solid transparent;  /* borde derecho transparente */
+    border-bottom: 15px solid #333;       /* borde inferior con color (triángulo apuntando hacia arriba) */
+    top: -7px;    /* posición vertical del triángulo */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header .ico-h:hover {
+    border: solid 2px;
+}
+
+
+
+@keyframes bell-shake {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(-10deg); }
+    40%  { transform: rotate(10deg); }
+    60%  { transform: rotate(-5deg); }
+    80%  { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .bell-icon {
+    animation: bell-shake 1.5s ease-in-out infinite;
+    transform-origin: top center;
+    display: inline-block;
+    filter: drop-shadow( 0 0 5px dodgerblue);
+    position: relative;
+  }

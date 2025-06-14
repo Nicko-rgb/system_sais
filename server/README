@@ -1,0 +1,54 @@
+# 🚀 Instrucciones para levantar el servidor Node.js Express con PM2
+
+Este proyecto integra una sección de React dentro de un sistema PHP principal.  
+React se monta en un archivo PHP (`contacto.php`) y consume servicios de una API Node.js Express local.
+
+Vamos a utilizar **PM2** para mantener el servidor Express funcionando en segundo plano de manera automática.
+
+---
+
+## 📦 PASOS COMPLETOS
+
+### 1. Instalar PM2 globalmente
+
+Abre una terminal y ejecuta:
+
+```bash
+npm install -g pm2
+```
+
+### 2. Instalar las dependencias del proyecto Node.js
+
+```bash
+npm install
+```
+### 3. Iniciar el servidor Express con PM2
+
+```bash
+pm2 start name_archivo_main.js --name name_servidor
+```
+
+### 4. Verificar el estado de PM2
+
+```bash
+pm2 list
+```
+
+### 5. Detener el servidor Express con PM2
+
+```bash
+pm2 stop name_servidor
+```
+### 4. Reiniciar, detener o eliminar el servidor
+```bash
+pm2 restart name_servidor
+pm2 stop name_servidor
+pm2 delete name_servidor
+```
+
+### 5. Mantener el servidor activo después de reiniciar la computadora
+
+```bash
+pm2 startup
+pm2 save
+```

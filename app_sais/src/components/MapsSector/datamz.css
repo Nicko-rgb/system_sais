@@ -1,0 +1,254 @@
+/* STYLO DE FORMULARIO */
+.data-mz {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    align-items: center;
+}
+
+.data-mz .datos-mz {
+    display: flex;
+    width: 100%;
+}
+.data-mz .datos-mz  p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    border: solid 1px var(--line1);
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 2px;
+    color: var(--color1);
+}
+.data-mz .datos-mz span {
+   color: black; 
+}
+.data-mz h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: center;
+}
+.data-mz .person-table{
+    border-collapse: collapse;
+    margin-top: -10px;
+    width: 100%;
+}
+.data-mz .person-table th{
+    background-color: white;
+    color: var(--color1);
+    font-size: 14px;
+    font-weight: 450;
+    text-align: left;
+    padding: 1px 4px;
+    text-align: center;
+}
+.data-mz .person-table tbody tr {
+    border: none;
+    border-top: var(--color3) solid 1px;
+}
+.data-mz .person-table tbody tr:hover {
+    background-color: var(--color4);
+}
+.data-mz .person-table td {
+    border: none;
+    white-space: nowrap;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 1px 4px;
+    cursor: default;
+    font-weight: 500;
+    text-align: left;
+}
+.data-mz table .accion svg:hover ~ td {
+    color: red;
+}
+.data-mz .person-table .accion svg {
+    color: red;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+.data-mz .no-p {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 134, 90);
+    font-size: 14px;
+    white-space: nowrap;
+    gap: 5px;
+    text-transform: none;
+}
+
+.data-mz .btn-new {
+    color: black;
+    background-color: var(--line1);
+    padding: 4px 10px;
+    display: flex;
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.data-mz .btn-new:hover {
+    background-color: var(--line2);
+}
+
+.data-mz form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    height: 0;
+    visibility: hidden;
+    transition: .5s ease;
+    overflow: hidden;
+    width: 100%;
+}
+.data-mz form.result {
+    height: auto;
+    visibility: visible;
+}
+.data-mz form.open {
+    visibility: visible;
+    height: 155px;
+}
+
+.data-mz form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.data-mz form input {
+    padding: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: var(--color3) solid;
+    outline: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.data-mz form input:focus {
+    border: rgba(14, 171, 145, 0.812) solid;
+}
+
+.data-mz form .loadingg {
+    position: absolute;
+    color: dodgerblue;
+    width: 100%;
+    text-align: center;
+    top: 80px;
+    font-size: 14px;
+}
+
+.data-mz form .result {
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.data-mz form .result p {
+    color: rgb(101, 100, 100);
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    justify-content: space-between;
+    border-top: var(--line1) 1px solid;
+}
+
+.data-mz form .result span {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 15px;
+    color: black;
+}
+
+.data-mz form .b-msg {
+    position: relative;
+}
+
+.data-mz .borrar .b-msg {
+    position: relative;
+    height: 25px;
+}
+
+.data-mz form .msg {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+}
+
+.data-mz .msg-success {
+    color: dodgerblue;
+}
+
+.data-mz .msg-error {
+    color: red;
+}
+
+.data-mz form .btns {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.data-mz form .btns button {
+    width: 130px;
+    height: 37px;
+    font-weight: 500;
+}
+.data-mz .btns .btn-disable {
+    background-color: var(--line1);
+    color: rgb(165, 165, 165);
+    cursor: not-allowed;
+}
+
+.data-mz .borrar {
+    position: absolute;
+    box-shadow: 0 0 2px rgba(255, 0, 0, 0.3), 0 0 2px rgba(255, 0, 0, 0.3);
+    width: 100%;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 247, 247);
+    padding: 10px;
+    gap: 5px;
+    animation: fadeIn .5s ease-in-out;
+    transform-origin: right;
+}
+
+.data-mz .borrar p {
+    text-align: center;
+    font-size: .9rem;
+}
+
+.data-mz .borrar span {
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.data-mz .borrar .btns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.data-mz .borrar button {
+    width: 120px;
+    height: 35px;
+}

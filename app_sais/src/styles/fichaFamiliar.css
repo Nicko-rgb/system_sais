@@ -1,0 +1,208 @@
+.ficha-familiar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ficha-familiar .cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.ficha-familiar .acciones {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ficha-familiar .acciones input {
+    padding: 5px 10px;
+    padding-left: 30px;
+    width: 350px;
+    font-weight: 600;
+    font-size: .9rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+.ficha-familiar .acciones input::placeholder {
+    text-transform: none;
+    font-weight: 500;
+    font-style: oblique;
+}
+.ficha-familiar .acciones input:focus {
+    outline: 2px solid var(--color3);
+    box-shadow: none;
+}
+.ficha-familiar .acciones .ico-search {
+    position: absolute;
+    left: 5px;
+    font-size: 20px;
+    color: gray;
+}
+.ficha-familiar .acciones input:focus ~ .ico-search {
+    color: var(--color0);
+}
+.ficha-familiar .acciones button {
+    padding: 0px 10px;
+    background-color: var(--color0);
+    color: white;
+    font-weight: 500;
+    height: 32px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.329);
+    transition: .1s linear;
+}
+
+.ficha-familiar .acciones button:hover {
+    box-shadow: none;
+    transform: scale(1.02);
+}
+.ficha-familiar .acciones button svg {
+    font-size: 1.1rem;
+}
+.ficha-familiar .cabecera fieldset {
+    display: flex;
+    border: none;
+    gap: 10px;
+}
+.ficha-familiar legend {
+    font-size: .9rem;
+    color: var(--color0);
+}
+.ficha-familiar .cabecera label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+    color: rgb(75, 75, 75);
+    width: 120px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+}
+
+.ficha-familiar .cabecera span {
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+.ficha-familiar main>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+.ficha-familiar .txt {
+    font-style: italic;
+    font-weight: 500;
+    color: rgb(75, 75, 75);
+    font-size:.9rem;
+}
+
+.ficha-familiar table {
+    border-collapse: collapse;
+}
+.ficha-familiar table tbody tr:nth-child(even) {
+    background-color: rgba(46, 32, 240, 0.05);
+}
+.ficha-familiar table tbody tr:hover {
+    background-color: var(--color4);
+}
+.ficha-familiar table th, td {
+    border: var(--color3) solid 1px;
+    padding: 3px 8px;
+    text-align: center;
+}
+.ficha-familiar table th {
+    background-color: var(--color3);
+    color: black;
+    font-weight: 500; 
+    padding: 0 8px;
+    font-size: .9rem;
+    user-select: none;
+}
+.ficha-familiar table td {
+    color: rgb(75, 75, 75);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .9rem;
+    padding: 2px 8px;
+}
+.ficha-familiar .acc {
+    display: flex;
+    gap: 3px;
+    padding: 2px;
+    background-color: white;
+}
+.ficha-familiar .acc>div {
+    width: 100%;
+    position: relative;
+}
+
+.ficha-familiar .acc div {
+    display: flex;
+    gap: 3px;
+}
+.ficha-familiar .acc svg {
+    width: 100%;
+    height: 23px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+.ficha-familiar .acc .ico-del {
+    background-color: rgba(255, 61, 93, 0.1);
+    color: rgb(252, 61, 61);
+}
+.ficha-familiar .acc .ico-del:hover {
+    padding: 2px;
+    background-color: rgba(255, 61, 93, 0.3);
+}
+
+.ficha-familiar .acc .ico-jefe {
+    background-color: rgba(14, 255, 118, 0.2);
+    color: var(--color1);
+    padding: 1px;
+}
+.ficha-familiar .acc .ico-jefe:hover {
+    padding: 3px;
+    background-color: rgba(14, 255, 118, 0.4);
+}
+
+.ficha-familiar .acc p {
+    position: absolute;
+    left: 110%;
+    z-index: 1;
+    background-color: #333;
+    color: white;
+    font-size: .8rem;
+    text-transform: none;
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: none;
+    text-wrap: nowrap;
+}
+.ficha-familiar .acc p::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #333;
+     
+}
+.ficha-familiar .acc div:hover p {
+    display: block; 
+}
+.ficha-familiar table .acc p:hover {
+    display: none;
+}

@@ -1,0 +1,177 @@
+
+.info-cita {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px 10px;
+}
+.info-cita .modal-info {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+    animation: slideIn 0.3s ease-out forwards ;
+    min-width: 600px;
+    max-width: 800px;
+}
+
+.info-cita .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-cita .modal-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.info-cita .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.info-cita .close-button:hover {
+    color: #e74c3c;
+}
+.info-cita .active {
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+.info-cita .cbz {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.info-cita .cbz button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 6px;
+}
+
+.info-cita .active button:hover {
+    box-shadow: none;
+}
+.info-cita .delete {
+    background: #E74D3CD8;
+    color: white;
+}
+.info-cita .delete svg {
+    font-size: 1rem;
+}
+.info-cita .cbz .btn-activar {
+    background-color: #E74D3C1F;
+}
+.info-cita .activar {
+    font-weight: 600 !important;
+    color: #2ecc71;
+}
+.info-cita .inactivar {
+    font-weight: 600 !important;
+    color: #e74c3c;
+}
+
+.info-cita .content-info-cita {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 30px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+}
+.info-cita .group {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+
+.info-cita .info-label {
+    font-weight: 600;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* min-width: 200px; */
+    width: 100%;
+    position: relative;
+}
+
+.info-cita .info-value {
+    color: #2c3e50;
+    font-size: 1rem;
+    padding: 8px;
+    background: #EFEFEFCE;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+.info-cita .files {
+    align-items: center;
+}
+.info-cita .files svg {
+    padding: 7px;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    background-color: #EFEFEFCE;  
+    cursor: pointer;
+}
+.info-cita .files svg:nth-child(2) {
+    color: #2ecc71;
+    background-color: #2ecc711f;
+}
+.info-cita .files svg:nth-child(3) {
+    color: #E74D3CFF;
+    background-color: #e74c3c1f;
+}
+.info-cita .files .info-value {
+    font-weight: normal;
+
+}
+.info-cita .motivo {
+    max-width: 100%;
+}
+.info-cita .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(244, 43, 43);
+    box-shadow: 0 0 4px 2px #f42b2b;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+.info-cita .activo  {
+    background-color: #2ecc71;
+    box-shadow: 0 0 4px 2px #2ecc71;
+}

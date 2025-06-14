@@ -1,0 +1,206 @@
+
+
+.dashboard .dash-main {
+    display: flex;
+}
+.dashboard .menus {
+    border-right: rgba(0, 0, 0, 0.1) solid 2px;
+    width: 230px;
+    position: fixed;
+    top: 45px;
+    bottom: 0;
+    left: 0;
+    transition: .3s linear;
+    z-index: 10;
+    background-color: white;
+}
+.dashboard .menus-oculto {
+    left: -250px;
+}
+.dashboard .menus-oculto .etique-item {
+    display: none;
+}
+.dashboard .menus h4 {
+    color: var(--color0);
+    font-weight: 550;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 5px;
+    align-items: center;
+}
+.dashboard .menus h4 svg {
+    font-size: 1.6rem !important;
+    padding: 2px;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    transition: .2s linear;
+}
+.dashboard .menus h4 svg:hover {
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+.dashboard .item-menu {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    color: black;
+    position: relative;
+    transition: .2s linear;
+    position: relative;
+}
+.dashboard .item-menu.active {
+    background-color: #EFEFEFFF; /* Color que quieras para destacar */
+    border-left: 7px solid var(--color0); /* Un borde para destacar más */
+    padding-left: 13px;
+    transition: all 0.3s ease;
+}
+
+.dashboard .menus aside:nth-child(7) {
+    border-bottom: 8px solid rgba(0, 0, 0, 0.1);
+}
+.dashboard .item-menu:hover {
+    background-color: rgba(202, 201, 201, 0.25); 
+}
+.dashboard .item-menu:hover p {
+    font-weight: 600;
+}
+.dashboard .menus svg {
+    /* color: red; */
+    font-size: 1.1em;
+    /* border: red solid 1px; */
+    width: 18px;
+    height: auto;
+}
+.dashboard .menus .item-text1 {
+    font-weight: 550;
+    font-size: .8rem;
+    /* color: rgb(62, 66, 102); */
+}
+.dashboard .menus .item-text2 {
+    position: absolute;
+    right: 10px;
+    color: rgb(104, 103, 103);
+    font-size: .7rem;
+    bottom: 0;
+}
+.dashboard .etique-item {
+    position: absolute;
+    left: calc(100% + 7px);
+    text-wrap: nowrap;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 400 !important;
+    cursor: default;
+    visibility: hidden;
+    transform: scale(.7);
+    opacity: 0;
+    transform-origin: left;
+}
+.dashboard .etique-item .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* padding: 20px; */
+}
+.dashboard .etique-item h2 {
+    text-align: center;
+}
+.dashboard .etique-item a {
+    background-color: white;
+    color: black;
+    width: 90px;
+    text-align: center;
+    padding: 5px 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    justify-content: center;
+    font-weight: 600;
+}
+.dashboard .etique-item::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;   /* borde izquierdo transparente */
+    border-right: 10px solid transparent;  /* borde derecho transparente */
+    border-bottom: 10px solid #333;       /* borde inferior con color (triángulo apuntando hacia arriba) */
+    top: 50%;
+    left: -12px;
+    transform: translateY(-50%) rotate(-90deg);
+}
+.dashboard .menus .item-menu:hover .etique-item {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition: .3s linear;
+}
+.dashboard .arrow-active {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    border: var(--color3) solid 3px;
+    font-size: 35px;
+    padding: 3px;
+    color: var(--color0);
+    cursor: pointer;
+    animation: reboteHorizontal 1s infinite ease-in-out;
+    z-index: 2;
+    background-color: white;
+}
+.dashboard .arrow-active:hover {
+    animation-play-state: paused;
+}
+@keyframes reboteHorizontal {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+  
+.dashboard .close-sesion {
+    background-color: var(--line0);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: rgb(62, 66, 102);
+    border: none;
+    padding: 12px 28px;
+    font-size: .8rem;
+    font-weight: 600;
+    transition: .3s linear;
+    outline: none;
+}
+  
+.dashboard .close-sesion:hover {
+    background-color: var(--line1);
+    font-size: .82rem;
+}
+.dashboard .close-sesion svg {
+    font-size: 16px;
+}  
+
+.dashboard>main {
+    /* border: black solid 1px; */
+    flex: 1;
+    margin-top: 45px;
+    margin-left: 230px;
+    transition: .3s linear;
+    z-index: 9;
+}
+
+
+.dashboard>main.main-1 {
+    margin-left: 0;
+}
+
+

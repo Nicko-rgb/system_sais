@@ -1,0 +1,133 @@
+.paciente {
+    min-height: 100vh;
+    background-color: white;
+}
+
+.paciente .ficha-contenedor {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    padding-bottom: 400px;
+    position: relative;
+    margin-top: 20px;
+}
+.paciente .ico-home {
+    width: 50px;
+    height: 35px;
+    top: -40px;
+    color: var(--color0);
+    background-color: var(--color4);
+    padding: 3px;
+    position: absolute;
+    cursor: pointer;
+}
+.paciente .volver_link {
+    height: 35px;
+    left: 60px;
+    top: -40px;
+}
+
+.ficha-datos section {
+    border-radius: 7px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    /* background: pink; */
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-top: 10px;
+    position: relative;
+}
+
+.ficha-datos h3 {
+    font-size: 1rem;
+    color: var(--color0);
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.fila span {
+    flex: 1 1 30%;
+    color: #2a2e37;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.fila span strong {
+    font-weight: 600;
+    color: #4A5568AA;
+    text-transform: none;
+}
+.paciente .discapacidad {
+   font-weight: 500; 
+   text-transform: initial;
+}
+.name {
+    text-transform: capitalize;
+}
+.paciente section button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--color0);
+    width: 130px;
+    height: 30px;
+    color: #fff;
+    font-weight: 500;
+}
+.paciente section button:hover {
+    transform: scale(1.05);
+}
+.paciente .ficha-datos p {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: rgba(255, 68, 0, 0.516);
+    font-weight: 500;
+}
+.paciente .btn-area {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.paciente .btn-editar {
+    background-color: var(--color2);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+    margin: 0 auto;
+}
+.paciente .btn-editar svg {
+    font-size: 20px;
+}
+
+.paciente .btn-editar:hover {
+    background-color: #0F68D4FF;
+}
+
+.paciente .alerta {
+    text-align: center;
+    color: #e53e3e;
+    font-weight: bold;
+}
+
+.paciente .loader {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #718096;
+}

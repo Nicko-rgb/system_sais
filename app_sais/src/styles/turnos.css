@@ -1,0 +1,474 @@
+
+
+/**********************************************/
+/*ESTYLOS DE LA TABLA VER TURNOS*/
+.turnos-personal {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.turnos-personal main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.turnos-personal main>h3 {
+  font-size: large;
+  font-family: 'poppins';
+}
+.turnos-personal main section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: -15px;
+}
+.turnos-personal .acciones {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  gap: 10px;
+  /* border: black solid 1px; */
+  height: 30px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.turnos-personal .acciones input {
+  width: 380px;
+  height: 100%;
+  padding-left: 35px;
+  border: none;
+  box-shadow: 0 0 3px black;
+  outline: none;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.turnos-personal .acciones input:focus {
+  outline: #00796b solid 2px;
+  box-shadow: none;
+}
+.turnos-personal .acciones input:focus ~ .ico_buscar{
+  color: #00796b;
+}
+.turnos-personal .acciones .ico_buscar {
+  position: absolute;
+  font-size: 20px;
+  top: 5px;
+  left: 10px;
+}
+
+.turnos-personal .acciones .filtros{
+  position: relative;
+  z-index: 100;
+  height: 100%;
+  width: 150px;
+}
+.turnos-personal .acciones .btn-filtro {
+  width: 100%;
+  font-weight: 600;
+}
+.turnos-personal .acciones .filtro{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: rgb(46, 42, 42);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px;
+  color: white;
+  display: none;
+  z-index: 20;
+}
+.turnos-personal .acciones .filtro span{
+  background-color: #333;
+  cursor: pointer;
+  padding: 3px ;
+  transition: .3s all;
+  font-size: .7rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.turnos-personal .acciones .filtro span:hover {
+  background-color: #535353;
+}
+.turnos-personal .acciones div .btn-filtro:hover~.filtro{
+  display: flex;
+}
+.turnos-personal .acciones .filtro:hover{
+  display: flex;
+}
+.turnos-personal .acciones .ico{
+  /* transform: rotate(-180deg); */
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.turnos-personal .acciones .fecha-cambiar{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+.turnos-personal .inf{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+  /* position: relative; */
+}
+.turnos-personal .inf hr {
+  height: 30px;
+  border: none;
+  border-left: gray solid 2px;
+}
+.turnos-personal .inf div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.turnos-personal .inf p{
+  text-transform: capitalize;
+  font-size: .8rem;
+  font-weight: 600;
+}
+.turnos-personal .inf .contador{
+  font-size: .8rem;
+  display: flex;
+  margin: 0;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  background-color: rgba(32, 167, 122, 0.212);
+  /* border-radius: 5px; */
+}
+.turnos-personal .inf .btn-a svg {
+  font-size: 20px;
+}
+.turnos-personal .loader-tur {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 50px 0;
+}
+.turnos-personal .loader-tur span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: var(--color3) solid 3px;
+  border-bottom-color: var(--color0);
+  animation: spin 1s linear infinite;
+}
+
+.turnos-personal .acciones button, .inf button {
+  background-color: var(--color0);
+  height: 100%;
+  padding: 5px 10px;
+  display: flex;
+  font-size: .75rem;
+  gap: 3px;
+  color: white;
+  font-family: 'poppins';
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.turnos-personal .btn-export {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color0);
+  color: white;
+  gap: 3px;
+  margin-top: 10px;
+  padding: 2px 10px;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+  float: right;
+  transition: .3s ease;
+}
+.turnos-personal .icoExport {
+  font-size: 16px;
+}
+
+.turnos-personal .btn-export:hover  {
+  transform: scale(1.01);
+}
+
+.turnos-personal .acciones .ico-cambiar {
+  font-size: 17px;
+}
+
+.turnos-personal main table {
+  /* margin-top: -5px; */
+  border-collapse: collapse;
+}
+
+.turnos-personal main table thead th{
+  font-family: 'poppins';
+  font-size: 12px;
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s;
+  background-color: var(--color0);
+  border: var(--color1) solid 1px;
+}
+.turnos-personal main table thead th:hover{
+  background-color: #51b7aba9; 
+}
+.turnos-personal main table thead th .accion-cabeza{
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  z-index: 5;
+  animation: fadeIn 0.3s ease;
+  padding: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+.balloon {
+  position: relative; 
+  background-color: rgb(11, 156, 156);
+  color: floralwhite;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px; 
+  cursor: initial;
+  box-shadow: 0 0 8px pink, 0 0 8px pink;
+}
+.balloon button{
+  margin: auto;
+  background-color: rgb(249, 99, 99);
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.balloon .ss {
+  background-color: lightgreen;
+  color: #333;
+  font-weight: 600;
+}
+
+.balloon::before {
+  content: ""; /* Necesario para crear el pseudo-elemento */
+  position: absolute; /* Posicionamiento absoluto */
+  top: -15px; /* Ajusta la posición vertical */
+  left: 10px; /* Ajusta la posición horizontal */
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(11, 156, 156);
+}
+.turnos-personal table .accion-cabeza p{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: initial;
+  margin: auto;
+}
+.turnos-personal table tbody .index {
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 500;
+  width: auto !important;
+}
+.turnos-personal table tbody .names{
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  text-transform: uppercase;
+  padding: 2px;
+  font-size: .75rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 0 5px;
+  width: auto !important;
+}
+
+.turnos-personal .content-info .flecha {
+  display: flex;
+}
+.turnos-personal table .names:hover{
+  text-decoration: underline;
+}
+.turnos-personal main table tbody tr{
+  transition: .2s linear;
+}
+.turnos-personal table tbody tr:hover{
+  background-color: rgb(199, 210, 255);
+}
+.turnos-personal main table tbody tr:focus {
+  background-color: rgb(199, 210, 255);
+}
+
+.turnos-personal table .claves {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.turnos-personal table .hrs {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: rgb(199, 210, 255);
+  width: auto !important;
+}
+.turnos-personal table tbody td {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 26px;
+  width: 35px;
+}
+
+.turnos-personal table tbody td select, .turnos-personal table tbody td p {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+  font-size: .65rem;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: .2s ease;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  border-radius: 0;
+}
+.turnos-personal table tbody td p{
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.turnos-personal td select:hover{
+  background-color: rgb(129, 152, 243);
+}
+.turnos-personal td select:focus{
+  outline: none;
+  background-color: rgb(129, 152, 243);
+}
+.turnos-personal table tbody td select {
+  background-color: transparent;
+  margin-top: -1px;
+}
+.turnos-personal table tbody td select option{
+  background-color: white;
+  font-weight: bold;
+  padding: 0;
+}
+.turnos-personal table .hoy {
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+  /* pointer-events: none; */
+  z-index: 1;
+}
+
+.turnos-personal table .domingo{
+  background-color: rgba(128, 128, 128, 0.383);
+  pointer-events: none;
+  z-index: 9;
+}
+.turnos-personal table td.domingo {
+  border-color: rgba(152, 152, 152, 0.721);
+}
+
+.turnos-personal table .bloqueada {
+  background-color: rgba(255, 117, 117, 0.443);
+  z-index: 9;
+} 
+.turnos-personal table td.bloqueada {
+  /* pointer-events: none; */
+  border-color: rgba(152, 152, 152, 0.726);
+}
+.turnos-personal table thead td.bloqueada{
+  pointer-events: initial;
+}
+
+.turnos-personal table td.bloqueada select {
+  width: 35px;
+  background-color: transparent !important;
+}
+
+/* Estilos del contenedor del interruptor */
+.turnos-personal .acciones .switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  margin-top: -8px;
+}
+
+/* Ocultar el checkbox original */
+.turnos-personal .acciones .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Estilo del slider (el botón deslizante) */
+.turnos-personal .acciones .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 8px;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: #e5e4e4;
+  transition: .4s; /* Transición suave */
+  border-radius: 34px; /* Bordes redondeados */
+  border: rgba(1, 159, 159, 0.419) solid 1px;
+}
+
+/* Estilo del slider cuando el checkbox está activado */
+.turnos-personal .acciones input:checked + .slider {
+  background-color: #2196F3;
+}
+
+/* El círculo deslizante dentro del slider */
+.turnos-personal .acciones .slider::before {
+  position: absolute;
+  content: "";
+  height: 16px; /* Altura del círculo deslizante */
+  width: 16px; /* Ancho del círculo deslizante */
+  left: 2px; /* Espacio desde la izquierda */
+  bottom: 1px; /* Espacio desde la parte inferior */
+  background-color: white; /* Color del círculo deslizante */
+  transition: .4s; /* Transición suave */
+  border-radius: 50%; /* Hacerlo circular */
+}
+
+/* Desplazar el círculo deslizante cuando el checkbox está activado */
+.turnos-personal .acciones input:checked + .slider::before {
+  transform: translateX(30px); /* Mover el círculo a la derecha */
+}
+.turnos-personal .acciones .switch p {
+  margin: 0;
+  font-size: 13px;
+  text-align: center;
+}

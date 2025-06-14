@@ -1,0 +1,60 @@
+
+ .admin-panel {
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+ }
+ .admin-panel hr {
+    margin: 1rem 0;
+}
+.admin-panel h5 {
+    /* padding-top: 2rem; */
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.admin-panel .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.admin-panel .card {
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 0 10px 3px var(--sombra1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px ;
+    cursor: default;
+    transition: .2s linear;
+    background-color: white;
+}
+.admin-panel .card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 1px var(--sombra1), 0 0 10px 1px var(--sombra1), 0 0 10px 1px var(--sombra1) ;
+}
+.admin-panel .card h4 {
+    text-align: center ;
+}
+.admin-panel .card p {
+    text-align: center;
+    color: rgb(98, 98, 98);
+    font-size: .85rem;
+}
+.admin-panel .card button {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgb(80, 206, 164), var(--color0), rgb(80, 206, 164));
+    width: 100%;
+    /* border-radius: 5px; */
+    color: white;
+    font-weight: 500;
+}
+.admin-panel .card svg {
+    font-size: 18px;
+}
+
+
+

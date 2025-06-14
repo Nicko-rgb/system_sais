@@ -1,0 +1,83 @@
+.perfil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    /* background-color: #f0f4f8; */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.perfil-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.perfil-header {
+    background-color: #1976d2;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.perfil-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.perfil-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.perfil-header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.perfil-info {
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.perfil-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.perfil-row p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    flex: 1 1 45%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil-row p strong {
+    color: #1976d2;
+    text-transform: capitalize;
+}
+
+a {
+    color: #1976d2;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #004ba0;
+}

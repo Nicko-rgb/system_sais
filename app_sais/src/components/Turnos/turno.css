@@ -1,0 +1,306 @@
+.turnos-personal .leyenda-turno {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 10px;
+    margin: auto;
+    margin-top: 30px;
+    padding-bottom: 200px;
+}
+
+.turnos-personal .leyenda-turno p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+
+
+
+.content-info {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 0 8px 2px var(--sombra1), 0 0 8px 2px var(--sombra1) ;
+    margin-right: 20px;
+    z-index: 2;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 450px;
+    border: solid 3px var(--color1);
+}
+
+.content-info .flecha {
+    position: absolute;
+    top: 5px;
+    left: -22px;
+    width: 0;
+    height: 0;
+    transform: rotate(-90deg);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid var(--color1);
+}
+
+.content-info .datos {
+    display: flex;
+    gap: 20px;
+}
+
+.content-info .datos div {
+    width: 100%;
+}
+
+.content-info h3 {
+    font-size: 19px;
+    margin: auto;
+    padding: 0 10px;
+    border-bottom: 1px solid rgba(188, 186, 186, 0.451);
+}
+
+.content-info b {
+    font-size: 13px;
+    font-family: 'poppins';
+    text-transform: uppercase;
+    color: rgb(90, 90, 90);
+    font-weight: 400;
+}
+
+.content-info p {
+    border: none;
+    font-family: 'poppins';
+    font-size: 13px;
+    background-color: transparent;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    color: black;
+    border-bottom: rgba(156, 156, 156, 0.168) solid 1px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.content-info button {
+    margin: auto;
+    margin-top: 20px;
+    padding: 8px 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* Estilos para exportar excel */
+
+.turnos-export {
+    padding: 20px;
+    padding-bottom: 200px;
+}
+
+.turnos-export main {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.turnos-export main section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+}
+
+.turnos-export .volver_link {
+    left: 0;
+}
+
+.turnos-export .acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+}
+
+.turnos-export .acciones p {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: .9rem;
+}
+
+.turnos-export .acciones button {
+    width: 130px;
+    height: 28px;
+    gap: 0;
+    font-size: .8rem;
+    background-color: #00796bb4;
+    color: white;
+}
+.turnos-export .acciones button svg {
+    font-size: 1rem;
+}
+
+.turnos-export .tbl {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.turnos-export table {
+    border-collapse: collapse;
+    margin-top: 0px;
+}
+
+.turnos-export .tbl h3 {
+    text-align: center;
+}
+
+.turnos-export .leyenda-turno {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    /* gap: 10px; */
+    /* max-width: 1400px; */
+}
+
+.turnos-export .leyenda-turno p {
+    display: flex;
+    align-items: center;
+}
+
+.turnos-export .exportar-excel {
+    margin: auto;
+    padding: 5px 10px;
+    color: var(--color0);
+    font-weight: 500;
+}
+
+
+/* ====================================================  */
+/* stylos para tabla reporte de turnos */
+
+.reporte-turnos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #02020238;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    display: flex;
+    padding: 50px 20px;
+    padding-bottom: 200px;
+    overflow-y: auto;
+    z-index: 200;
+}
+.reporte-turnos aside {
+    padding: 20px;
+    background-color: white;
+    margin: auto;
+    animation: slideInY .3s linear;
+    position: relative;
+}
+.reporte-turnos h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.5rem;
+}
+.reporte-turnos .close-ico {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 40px;
+    padding: 5px;
+    color: rgb(253, 83, 83);
+    cursor: pointer;
+}
+
+.reporte-turnos table {
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.reporte-turnos th,
+.reporte-turnos td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.reporte-turnos th {
+    background-color: #004e89;
+    color: white;
+    font-size: .8rem;
+    font-weight: normal;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+    padding: 3px 10px;
+}
+
+.reporte-turnos tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Clases para estado */
+.reporte-turnos .ok {
+    background-color: lightgreen;
+    color: #333;
+    /* font-weight: bold; */
+}
+
+.reporte-turnos .falta {
+    background-color: #fdc5c5;
+    /* background-color: #f8d7da; */
+    color: #721c24;
+    /* font-weight: bold; */
+}
+
+.reporte-turnos .exceso {
+    background-color: orange;
+    color: #856404;
+    /* font-weight: bold; */
+}
+.reporte-turnos table td {
+    padding: 2px 5px !important;
+    /* font-weight: 500; */
+    font-size: .8rem;
+    cursor: default;
+}
+.reporte-turnos table .name {
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 500;
+    /* font-size: 14px; */
+}
+.reporte-turnos table #num {
+    font-weight: 500;
+}
+/* Ajuste para celdas de condición */
+.reporte-turnos .reporte-turnos td:first-child {
+    text-align: left;
+    padding-left: 1rem;
+}

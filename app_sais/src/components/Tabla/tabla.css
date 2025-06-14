@@ -1,0 +1,114 @@
+.tabla {
+    border-collapse: collapse;
+    box-shadow: 2px 2px 15px 5px var(--sombra1);
+    background-color: white;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid var(--color3);
+    font-size: .8rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+}
+
+.tabla th {
+    background-color: var(--color3);
+    font-weight: 500;
+    padding: 2px 5px;
+}
+
+.tabla tr:hover {
+    transition: .2s linear;
+    cursor: default;
+}
+.tabla tr.row-inactivo {
+    background-color: rgba(255, 11, 51, 0.143);
+    /* color: gray; */
+}
+.tabla tr .name {
+    text-align: left;
+}
+
+.tabla td {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 6px;
+}
+.tabla tr .btt {
+    padding: 1px 2px;
+}
+.tabla tbody a {
+    margin: 0;
+    font-weight: 500;
+    color: rgb(136, 79, 249);
+    text-decoration-color: rgb(157, 157, 157);
+}
+
+.tabla .no-data {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #888;
+}
+
+.tabla .acciones {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    height: 25px;
+}
+
+table button {
+    border: none;
+    padding: 0 5px;
+    border-radius: 1px;
+    font-weight: 500;
+    width: 100%;
+}
+.tabla .btn-1 {
+    background-color: var(--color0);
+    color: white;
+    width: 100px;
+}
+.tabla .btn-2 {
+    background-color: var(--color2);
+    color: white;
+    font-size: 0.9rem;
+    width: 40px;
+}
+
+.tabla .btn-3 {
+    background-color: #FA6358FF;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.tabla .btn-editar:hover, .btn-eliminar:hover {
+    opacity: 0.8;
+}
+
+.tabla .tbl-container .paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 10px;
+    gap: 10px;
+}
+.paginacion button {
+   padding: 3px 10px; 
+   font-weight: 500;
+}
+.paginacion span {
+    color: rgb(75, 75, 75);
+    font-size: .8rem;
+    font-weight: 500;
+}

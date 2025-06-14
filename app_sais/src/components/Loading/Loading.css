@@ -1,0 +1,20 @@
+.loader {
+  height: calc(100vh - 45px);
+  position: relative;
+  /* border: green solid; */
+}
+.loader #load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  /* border: red 1px solid; */
+}
+.loader p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 30px;
+  color: dodgerblue;
+  text-wrap: nowrap;
+}
