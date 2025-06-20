@@ -248,7 +248,7 @@ const RegPersonal = ({ handleForm }) => {
                                 <select name="tipoPersonal" value={formData.tipoPersonal} onChange={handleChange} disabled={loading} >
                                     <option value="">--Ninguno--</option>
                                     <option value="Administrativo">Administrativo</option>
-                                    <option value="Salud">Salud</option>
+                                    <option value="Salud">Asistencial</option>
                                 </select>
                             </label>
                             <label className='file'>Adjuntar Archivo:
