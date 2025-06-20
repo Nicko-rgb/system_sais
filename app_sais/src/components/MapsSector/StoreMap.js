@@ -109,27 +109,60 @@ const useStoreMap = () => {
                 toast.error('No hay asignaciones para exportar');
                 return; 
             }
+    
+            // Agrupar por DNI y juntar pares código-manzana
+            const agrupados = {};
+            sectorPer.forEach(item => {
+                const key = item.dni;
+                if (!agrupados[key]) {
+                    agrupados[key] = { ...item, codigosManzanas: [{ codigo: item.codigo, manzana: item.manzana || '--' }] };
+                } else {
+                    // Verificar si ya existe ese código con manzana para evitar duplicados
+                    const existe = agrupados[key].codigosManzanas.some(
+                        cm => cm.codigo === item.codigo && cm.manzana === (item.manzana || '--')
+                    );
+                    if (!existe) {
+                        agrupados[key].codigosManzanas.push({ codigo: item.codigo, manzana: item.manzana || '--' });
+                    }
+                }
+            });
+    
+            // Convertir a array y unir código y manzana por guion, cada par en línea nueva
+            const dataAgrupada = Object.values(agrupados).map(item => ({
+                ...item,
+                codigo: item.codigosManzanas
+                    .map(cm => `${cm.codigo} - ${cm.manzana}`)
+                    .join('\n'),
+            }));
+    
             const doc = new jsPDF();
-            const tableColumn = ['N°', 'Código', 'Manzana', 'Nombre Profesional', 'DNI'];
-            const tableRows = sectorPer.map((item, index) => [
+            const tableColumn = ['N°', 'Código - Manzana', 'Nombre Profesional', 'DNI'];
+            const tableRows = dataAgrupada.map((item, index) => [
                 index + 1,
                 item.codigo,
-                item.manzana,
                 (item.nombres + ' ' + item.paterno + ' ' + item.materno).toUpperCase(),
                 item.dni
             ]);
-
+    
             doc.text('Profesionales con Manzanas', 14, 15);
             doc.autoTable({
                 head: [tableColumn],
                 body: tableRows,
                 startY: 20,
+                styles: { cellPadding: 2 },
+                columnStyles: {
+                    1: { cellWidth: 60 } // Ajusta ancho para que se vea bien el salto de línea
+                },
+                didDrawCell: (data) => {
+                    // Para que el salto de línea funcione bien en jsPDF autoTable, se puede usar cell.styles.minCellHeight o cell.styles.cellPadding si fuera necesario
+                }
             });
             doc.save('asignado_manzana.pdf');
         } catch (error) {
             console.error('Error al exportar los datos:', error);
         }
     };
+    
 
     // logica para vaciado de datos de configuracion
     const vaciarAsignacion = async () => {

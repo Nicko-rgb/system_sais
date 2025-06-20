@@ -11,6 +11,7 @@ export const useFormPaciente = () => {
     const API_URL = import.meta.env.VITE_API_URL;
     const navigate = useNavigate();
     const [msg, setMsg] = useState('');
+    const [loading, setLoading] = useState(false);
     // Estados para los campos del formulario
     const [formData, setFormData] = useState({
         dni: '',
@@ -73,7 +74,7 @@ export const useFormPaciente = () => {
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
-    
+
         // Si el campo es "dni", solo permitir números
         if (name === 'dni') {
             // Eliminar todo lo que no sea dígito
@@ -84,22 +85,26 @@ export const useFormPaciente = () => {
             }));
             return; // Salimos para evitar el setFormData duplicado abajo
         }
-    
+
         setFormData(prev => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value
         }));
-    
+
         // Si se desactiva el checkbox de tieneResponsable, limpiar el formulario del responsable
         if (name === 'tieneResponsable' && !checked) {
             resetFormRes();
         }
     };
-    
+
 
     // Validación de campos
     const validateForm = () => {
         const newErrors = {};
+
+        if (dniHistoriaValue) {
+            formData.histClinico = formData.dni
+        }
 
         // Validación de DNI
         if (!formData.dni) {
@@ -109,15 +114,15 @@ export const useFormPaciente = () => {
         }
 
         // Validar historia clínico
-        if(!dniHistoriaValue) {
-            if (!formData.histClinico.length !== 5) {
+        if (!dniHistoriaValue) {
+            if (formData.histClinico.length !== 5) {
                 newErrors.histClinico = 'Debe tener 5 digitos';
             }
         }
         if (!formData.histClinico) {
             newErrors.histClinico = 'Este campo es obligatorio'
         }
-    
+
         // Validación de nombres y apellidos
         if (!formData.apePaterno) newErrors.apePaterno = 'El apellido paterno es obligatorio';
         if (!formData.apeMaterno) newErrors.apeMaterno = 'El apellido materno es obligatorio';
@@ -148,10 +153,16 @@ export const useFormPaciente = () => {
 
     // Manejador de envío del formulario
     const handleSubmit = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
+        setLoading(true);
+        const idToast = toast.loading('Guardando...');
         setMsg('');
         const isPacienteValid = validateForm();
         let isResponsableValid = true;
+        if(!isPacienteValid) {
+            toast.dismiss(idToast);
+            setLoading(false);
+        }
 
         if (formData.tieneResponsable) {
             isResponsableValid = validateFormRes();
@@ -179,16 +190,20 @@ export const useFormPaciente = () => {
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(errorData.message || 'Error al guardar los datos');
-                } 
+                }
                 const responseData = await response.json();
                 toast.success(responseData.message || 'Datos guardados correctamente');
-                // navigate(`/#/admision/${formData.histClinico}`);
+                navigate(`/admision/${formData.histClinico}`);
+                setLoading(false);
+                toast.dismiss(idToast);
                 return true;
             } catch (error) {
                 console.error('Error al guardar:', error);
                 toast.error(error.message || 'Error al guardar los datos: Server.');
                 setMsg(error.message || 'Error al guardar los datos');
                 setErrors(prev => ({ ...prev, submit: error.message || 'Error al guardar los datos' }));
+                setLoading(false);
+                toast.dismiss(idToast);
                 return false;
             }
         }
@@ -211,6 +226,7 @@ export const useFormPaciente = () => {
         errorsRes,
         handleInputChangeRes,
         handleUbicacionChangeRes,
-        msg
+        msg,
+        loading
     };
 };

@@ -30,31 +30,36 @@ const SelectHistoria = ({ value, onChange, error, dniValue }) => {
     return (
         <label className='historia_clin'>
             Hist Clínico
-            <input 
+            <input
                 type="text"
                 name="histClinico"
-                value={ dniHistoriaValue ? dniValue : value}
+                value={dniHistoriaValue ? dniValue : value}
                 onChange={onChange}
                 maxLength="5"
-                placeholder="-----"
+                placeholder={dniHistoriaValue ? '----' : '00000'}
+                disabled = {dniHistoriaValue}
             />
-            <div className="historias-disponibles">
-                <p>Hist disponibles</p>
-                <ul>
-                    {historiasDisponibles.map((historia, index) => (
-                        <li 
-                            key={index}
-                            onClick={() => {handleHistoriaClick(historia)}}
-                            className={value === historia ? 'selected' : ''}
-                        >
-                            {historia}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        {error && <span className="error">{error}</span>}
-    </label>
-)
+            {dniHistoriaValue ? (
+                <></>
+            ) : (
+                <div className="historias-disponibles">
+                    <p>Hist disponibles</p>
+                    <ul>
+                        {historiasDisponibles.map((historia, index) => (
+                            <li
+                                key={index}
+                                onClick={() => { handleHistoriaClick(historia) }}
+                                className={value === historia ? 'selected' : ''}
+                            >
+                                {historia}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+            {error && <span className="error">{error}</span>}
+        </label>
+    )
 }
 
 export default SelectHistoria

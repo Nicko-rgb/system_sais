@@ -1,4 +1,4 @@
-const mysql = require('mysql2/promise'); // Importar mysql2
+const mysql = require('mysql2/promise'); // Importar mysql2cls
 
 // Configura tu conexión a la base de datos
 const pool = mysql.createPool({

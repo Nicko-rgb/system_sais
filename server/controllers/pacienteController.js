@@ -321,30 +321,30 @@ const getPacienteHistoria = async (req, res) => {
     const connection = await pool.getConnection();
 
     try {
-        // 1. Obtener paciente y ficha familiar
-        const [rows] = await connection.execute(
-            `SELECT p.*, f.*
-             FROM pacientes p
-             LEFT JOIN ficha_familiar f ON p.id_ficha = f.id_ficha
-             WHERE p.hist_clinico = ?`,
+        // 1. Obtener solo los datos del paciente por historia clínica
+        const [pacienteRows] = await connection.execute(
+            `SELECT * FROM pacientes WHERE hist_clinico = ?`,
             [historia]
         );
 
-        if (rows.length === 0) {
+        if (pacienteRows.length === 0) {
             throw new Error(`No se encontró paciente con historia clínica: ${historia}`);
         }
 
-        const paciente = rows[0];
+        const paciente = pacienteRows[0];
 
-        // 2. Preparar ficha familiar si existe
-        const fichaFamiliar = paciente.id_ficha ? {
-            id_ficha: paciente.id_ficha,
-            codigo_ficha: paciente.codigo_ficha,
-            manzana: paciente.manzana,
-            vivienda_numero: paciente.vivienda_numero,
-            grupo_familiar: paciente.grupo_familiar,
-            jefe_familia: paciente.jefe_familia,
-        } : null;
+        // 2. Obtener ficha familiar si tiene id_ficha
+        let fichaFamiliar = null;
+        if (paciente.id_ficha) {
+            const [fichaRows] = await connection.execute(
+                `SELECT * FROM ficha_familiar WHERE id_ficha = ?`,
+                [paciente.id_ficha]
+            );
+
+            if (fichaRows.length > 0) {
+                fichaFamiliar = fichaRows[0];
+            }
+        }
 
         // 3. Obtener datos del responsable si existe
         let responsable = null;
@@ -358,17 +358,17 @@ const getPacienteHistoria = async (req, res) => {
             }
         }
 
-        // 4. Obtener pacientes de la misma familia (misma id_ficha)
+        // 4. Obtener familiares asociados (pacientes con mismo id_ficha)
         let familiares = [];
         if (paciente.id_ficha) {
-            const [familiaRows] = await connection.execute(
+            const [familiaresRows] = await connection.execute(
                 `SELECT * FROM pacientes WHERE id_ficha = ? AND id_paciente != ?`,
                 [paciente.id_ficha, paciente.id_paciente]
             );
-            familiares = familiaRows;
+            familiares = familiaresRows;
         }
 
-        // 5. Enviar respuesta completa
+        // 5. Devolver respuesta completa
         res.json({
             ...paciente,
             ficha_familiar: fichaFamiliar,
@@ -383,6 +383,7 @@ const getPacienteHistoria = async (req, res) => {
         connection.release();
     }
 };
+
 
 
 

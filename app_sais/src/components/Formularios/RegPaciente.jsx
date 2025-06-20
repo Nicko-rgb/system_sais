@@ -8,7 +8,7 @@ import SelectHistoria from '../../components/Admision/SelectHistoria';
 
 const RegPaciente = ({ closeForm }) => {
 
-    const { formData, errors, handleInputChange, handleSubmit, handleUbicacionChange, formDataRes, errorsRes, handleInputChangeRes, handleUbicacionChangeRes, msg } = useFormPaciente()
+    const { formData, errors, handleInputChange, handleSubmit, handleUbicacionChange, formDataRes, errorsRes, handleInputChangeRes, handleUbicacionChangeRes, msg, loading } = useFormPaciente()
     const sectores = ['Sector 1', 'Sector 2', 'Sector 3', 'Sector 4', 'Sector 5', 'Sector 6', 'Sector 7', 'Sector 8', 'Sector 9']
 
     useEffect(() => {
@@ -238,7 +238,7 @@ const RegPaciente = ({ closeForm }) => {
                 </div>
                 <p className='msgg'>{msg} </p>
                 <div className="btns">
-                    <button type="submit" className='btn-submit'>Guardar<MdCloudUpload /></button>
+                    <button type="submit" disabled={loading} className='btn-submit'> {loading ? 'Gurdando...' : 'Guardar'} <MdCloudUpload /></button>
                     <button type="button" className='btn-cancel' onClick={() => closeForm(false)}>Cancelar</button>
                 </div>
             </form>

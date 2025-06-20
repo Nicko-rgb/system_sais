@@ -1,12 +1,10 @@
 .paciente {
     min-height: 100vh;
-    background-color: white;
 }
 
 .paciente .ficha-contenedor {
     max-width: 1000px;
     margin: auto;
-    background-color: white;
     padding-bottom: 400px;
     position: relative;
     margin-top: 20px;
@@ -35,6 +33,7 @@
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #e2e8f0;
+    background-color: white;
     padding-top: 10px;
     position: relative;
 }

@@ -469,7 +469,7 @@ CREATE TABLE IF NOT EXISTS `nino_vacuna` (
 --
 -- Estructura de tabla para la tabla `parametro`
 --
-
+USE sin_nino;
 DROP TABLE IF EXISTS `parametro`;
 CREATE TABLE IF NOT EXISTS `parametro` (
   `idParametro` int(11) NOT NULL AUTO_INCREMENT,

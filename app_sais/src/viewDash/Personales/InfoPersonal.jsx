@@ -1,10 +1,11 @@
-import React, { use, useState } from 'react'
+import React, { useState } from 'react'
 import '../../components/Citas/info_cita.css'
 import { IoMdClose } from 'react-icons/io';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { toast } from 'react-toastify';
 import { BiLinkExternal } from "react-icons/bi";
 import { useAuth } from '../../context/AuthContext';
+import Swal from 'sweetalert2';
 
 const InfoPersonal = ({ onClose, personData, handleActivated }) => {
     const [estado, setEstado] = useState(personData.estado);
@@ -13,31 +14,44 @@ const InfoPersonal = ({ onClose, personData, handleActivated }) => {
     const { user } = useAuth()
 
     const handleDelete = async () => {
-        const toastId = toast.loading('Eliminando personal...', { position: 'top-center' });
-        try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/eliminar-personal/${personData.id_personal}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                toast.success(data.message);
-                onClose();
-            } else {
-                toast.error(data.message);
+        const result = await Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡Esta acción no se puede deshacer!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        });
+    
+        if (result.isConfirmed) {
+            const toastId = toast.loading('Eliminando personal...', { position: 'top-center' });
+            try {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/eliminar-personal/${personData.id_personal}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+    
+                const data = await response.json();
+    
+                if (response.ok) {
+                    toast.success(data.message);
+                    onClose();
+                } else {
+                    toast.error(data.message);
+                }
+                toast.dismiss(toastId);
+    
+            } catch (error) {
+                console.error('Error al eliminar el personal:', error);
+                toast.error('Error al eliminar el personal');
+                toast.dismiss(toastId);
             }
-            toast.dismiss(toastId);
-
-        } catch (error) {
-            console.error('Error al eliminar el personal:', error);
-            toast.error('Error al eliminar el personal');
-            toast.dismiss(toastId);
         }
-    }
+    };
 
     const handleDeleteArchivo = async () => {
         const confirm = window.confirm("¿Estás seguro de eliminar el archivo?");

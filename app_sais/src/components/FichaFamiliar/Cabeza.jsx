@@ -97,7 +97,7 @@ const Cabeza = ({ data, setSearchTerm }) => {
                 <input type="search" placeholder='Buscar miembro de familia...' onChange={(e) => setSearchTerm(e.target.value)} />
                 <LuTextSearch className='ico-search' />
                 <button onClick={handleAgregarNuevo}><FaUserPlus /> Agregar Nuevo </button>
-                <button><MdOutlineAssignmentTurnedIn /> Asignar Jefe</button>
+                {/* <button><MdOutlineAssignmentTurnedIn /> Asignar Jefe</button> */}
             </div>
             <fieldset>
                 <legend>Informacion de Ficha Familiar</legend>
@@ -113,6 +113,9 @@ const Cabeza = ({ data, setSearchTerm }) => {
                 </label>
                 <label>Integrantes:
                     <span>{totalIntegrantes}</span>
+                </label>
+                <label>Jefe:
+                    <span>{data?.jefe_familia || '--'}</span>
                 </label>
             </fieldset>
         </section>

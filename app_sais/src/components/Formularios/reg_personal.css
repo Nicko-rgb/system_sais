@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     padding-bottom: 200px;
     width: 100%;
     
@@ -25,7 +25,6 @@
     position: relative;
     padding: 20px 0;
     padding-bottom: 100px;
-    /* background-color: rgb(244, 248, 255); */
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -33,6 +32,8 @@
     max-width: 650px;
     /* border: red solid 1px; */
     animation: slideIn 0.3s forwards ;
+    background-color: white;
+    padding: 20px 10px;
 
 }
 
