@@ -8,13 +8,15 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-/node_modules
-node_modules/
 dist
 dist-ssr
 *.local
-
+sql
 .env
+
+# ignora tabla sql nino.sql dentro de carpeta config
+config/nino.sql
+config/tablas_sais.sql
 
 # Editor directories and files
 .vscode/*
